@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+
+/* Set white background for the whole page */
+body {
+    background-color: #fff;
+    background-image: url('pic.jpg');
+    background-size: cover;
+    background-position: center;
+   
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff; /* Text color on blurred background */
+}
+
+.box {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 70px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    position: relative;
+    backdrop-filter: blur(10px); /* Adjust the blur intensity */
+}
+
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.center-links {
+    text-align: left;
+}
+
+.center-links li {
+    margin-bottom: 10px;
+}
+
+.center-links a {
+    text-decoration: none;
+    color: #000; /* Black link color */
+    font-weight: bold;
+    font-size: 14px; /* Adjust as needed */
+}

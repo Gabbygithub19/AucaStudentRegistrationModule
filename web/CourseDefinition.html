@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Course Definition</title>
+    <link rel="stylesheet" type="text/css" href="course-definition.css">
+</head>
+<body>
+    <nav class="sidebar">
+        
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            
+        </ul>
+        <div class="user-links">
+           
+        </div>
+    </nav>
+    <div class="content-container">
+        <div class="background-image">
+            <!-- Your background image goes here -->
+        </div>
+        <div class="centered-content">
+            <div class="signup-container">
+                <h1>Create Course Definition</h1>
+                <form id="courseForm">
+                    <label for="id">Course ID:</label>
+                    <input type="text" id="id" name="id" required>
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                    
+                    <input type="button" value="Create Course Definition" onclick="createCourse()">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createCourse() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var description = document.getElementById("description").value;
+            
+            // Here you can send the data to the server using AJAX or perform any other action
+            // For demonstration, I'll just log the values
+            console.log("ID: " + id);
+            console.log("Name: " + name);
+            console.log("Description: " + description);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" type="text/css" href="registerstud.css">
+</head>
+<body>
+    <nav class="sidebar">
+       
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            
+        </ul>
+        <div class="user-links">
+           
+        </div>
+    </nav>
+    <div class="content-container">
+        <div class="background-image">
+            <!-- Your background image goes here -->
+        </div>
+        <div class="centered-content">
+            <div class="signup-container">
+                <h1>Student Registration</h1>
+                <form id="studentRegistrationForm">
+                    <input type="hidden" name="action" value="create">
+                    <label for="regId">Registration ID:</label>
+                    <input type="text" name="id" id="regId">
+                    <label for="depId">Select department:</label>
+                    <select name="academicUnitId" id="depId">
+                        <option value="" selected>Select department</option>
+                    </select>
+                    <label for="semId">Select Semester ID:</label>
+                    <select name="semesterId" id="semId">
+                        <option value="" selected>Select Semester ID:</option>
+                    </select>
+                    <label for="stid">Select Student ID:</label>
+                    <select name="studentId" id="stuId">
+                        <option value="" selected>Select Student ID:</option>
+                    </select>
+                    <label for="regDate">Registration Date:</label>
+                    <input type="text" name="regDate" id="regDate" readonly>
+                    <input type="submit" value="Register Students">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDepartments();
+            loadSemesters();
+            loadStudents();
+            setCurrentDate();
+        });
+
+        function loadDepartments() {
+            fetch('departments.json')
+                .then(response => response.json())
+                .then(data => {
+                    const depId = document.getElementById('depId');
+                    data.forEach(department => {
+                        const option = document.createElement('option');
+                        option.value = department.id;
+                        option.textContent = department.name;
+                        depId.appendChild(option);
+                    });
+                });
+        }
+
+        function loadSemesters() {
+            fetch('semesters.json')
+                .then(response => response.json())
+                .then(data => {
+                    const semId = document.getElementById('semId');
+                    data.forEach(semester => {
+                        const option = document.createElement('option');
+                        option.value = semester.id;
+                        option.textContent = semester.name;
+                        semId.appendChild(option);
+                    });
+                });
+        }
+
+        function loadStudents() {
+            fetch('students.json')
+                .then(response => response.json())
+                .then(data => {
+                    const stuId = document.getElementById('stuId');
+                    data.forEach(student => {
+                        const option = document.createElement('option');
+                        option.value = student.id;
+                        option.textContent = student.id;
+                        stuId.appendChild(option);
+                    });
+                });
+        }
+
+        function setCurrentDate() {
+            const currentDate = new Date().toISOString().split('T')[0];
+            document.getElementById('regDate').value = currentDate;
+        }
+    </script>
+</body>
+</html>

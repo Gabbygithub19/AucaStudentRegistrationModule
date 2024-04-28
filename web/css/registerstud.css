@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Disable scrolling */
+}
+
+.nav-links {
+    list-style: none;
+    margin: auto; /* Center the list vertically */
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px; /* Equal padding on top and bottom */
+}
+
+.nav-links li {
+    margin-bottom: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.content-container {
+    box-sizing: border-box;
+}
+
+.background-image {
+    background: url('pic.jpg') center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    filter: blur(8px); /* Adjust the blur intensity */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjust the total height by subtracting the padding */
+}
+
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px; /* Smaller padding */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h1 {
+    font-size: 24px; /* Smaller font size */
+    margin-bottom: 15px; /* Smaller margin */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px; /* Smaller margin */
+}
+
+input,
+textarea,
+select,
+date {
+    width: 80%; /* Smaller width */
+    padding: 8px; /* Smaller padding */
+    margin-bottom: 12px; /* Smaller margin */
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px; /* Smaller padding */
+    border-radius: 5px;
+    font-size: 14px; /* Smaller font size */
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
